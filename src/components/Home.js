@@ -1,10 +1,14 @@
 import React from "react";
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import {Jumbotron} from 'react-bootstrap';
 import { Card, Button, Row, Col } from "react-bootstrap";
 import {CardData} from './Data';
 
-
 function Home() {
+
+  function btnClick() {
+    console.log("I am clicked!");
+  }
+
   return (
       <div style={{marginTop : "100px"}}>
       <Jumbotron className="jumbo">
@@ -32,14 +36,14 @@ function Home() {
     <Card.Text>
       Price : {price}
     </Card.Text>
-    <Button className="btn">Add to cart</Button>
+    <Button className="btn" onClick={btnClick}>Add to cart</Button>
   </Card.Body>
 </Card>
 </Col>
  );
  })}
 </Row> 
-    </div>
+</div>
 );
 }
 

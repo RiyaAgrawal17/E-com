@@ -3,7 +3,7 @@ import React from "react";
 
 function Setting() {
   return (
-      <div>
+    <div style={{marginTop : "50px"}}>
        Setting page
       </div>
    

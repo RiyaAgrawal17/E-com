@@ -3,7 +3,7 @@ import React from "react";
 
 function Profile() {
   return (
-      <div>
+    <div style={{marginTop : "50px"}}>
        Profile page
       </div>
    

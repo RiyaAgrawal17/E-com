@@ -7,6 +7,7 @@ import Cart from './components/Cart';
 import Order from './components/Order';
 import Setting from './components/Setting';
 import Profile from './components/Profile';
+import Backend from './components/Backend';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route exact path = '/Cart' component = {Cart} />
             <Route exact path = '/Order' component = {Order} />
             <Route exact path = '/Setting' component = {Setting} />
+            <Route exact path = '/Backend' component = {Backend} />
           </Fragment>
         </Switch>
       </div>

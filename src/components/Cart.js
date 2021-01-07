@@ -3,7 +3,7 @@ import React from "react";
 
 function Cart() {
   return (
-      <div>
+    <div style={{marginTop : "50px"}}>
        Cart page
       </div>
    
