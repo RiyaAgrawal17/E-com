@@ -1,9 +1,22 @@
-import React from "react";
-import { Button } from "react-bootstrap";
-import Table from 'react-bootstrap/Table'
+import React,{useState,useEffect} from "react";
+import { Button, Table } from "react-bootstrap";
+
 
 function Add() {
+  const [products, setProducts] = useState([]);
+
+  
+  useEffect(() => {
+    const locals = JSON.parse(
+      localStorage.getItem("product")
+    );
+
+    if (locals) {
+      setProducts(locals);
+    }
+  }, []);
   return (
+
 <div style={{marginTop : "80px"}}>
   <h3 style={{textAlign:"center"}}>Ecomm Back Office</h3>
 
@@ -26,8 +39,18 @@ function Add() {
     </tr>
   </thead>
   <tbody>
-    <tr><td></td></tr>
-  </tbody>
+          {products.map((product) => (
+            <tr key={product.id}>
+              <td>{product.id}</td>
+              <td>{product.name}</td>
+              <td>{product.description}</td>
+              <td>{product.category}</td>
+              <td>{product.price}</td>
+              <td>{product.stock}</td>
+              <td>{product.status}</td>
+            </tr>
+          ))}
+        </tbody>
 </Table>
 </div>
    
