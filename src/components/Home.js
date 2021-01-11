@@ -54,6 +54,14 @@ const Home = () => {
 
     const cartItem = JSON.parse(localStorage.getItem("cart"));
     cartItem.push(getCartItem);
+    //console.log(products);
+   const total = cartItem.map((value) => value.price);
+    //console.log(total);
+   let total_price = total.reduce(
+      (total, num) => parseInt(total) + parseInt(num),
+      0
+    );
+    console.log(total_price);
     localStorage.setItem("cart", JSON.stringify(cartItem));
   };
 
@@ -61,7 +69,7 @@ const Home = () => {
 
 
   const product = locals.map((item) => {
-    console.log(item);
+   
     return (
       <div style={{marginTop:"70px"}}>
       <Col lg={12} md={6} sm={12} key={item.id}>
