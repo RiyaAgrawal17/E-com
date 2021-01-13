@@ -3,6 +3,7 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 
 
 const Home = () => {
+  let counter=0;
 
   const [locals, setLocals] = useState([
     {
@@ -53,15 +54,12 @@ const Home = () => {
     const getCartItem = search(e.target.id, products);
 
     const cartItem = JSON.parse(localStorage.getItem("cart"));
+    if(!getCartItem.id)
     cartItem.push(getCartItem);
-    //console.log(products);
-   const total = cartItem.map((value) => value.price);
-    //console.log(total);
-   let total_price = total.reduce(
-      (total, num) => parseInt(total) + parseInt(num),
-      0
-    );
-    console.log(total_price);
+    else
+    counter= counter+1;
+    //console.log(counter);
+    
     localStorage.setItem("cart", JSON.stringify(cartItem));
   };
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ListGroup,Row, Col ,Button} from "react-bootstrap";
+import { ListGroup,Row, Col} from "react-bootstrap";
 
 
 export default function Cart() {
@@ -12,7 +12,17 @@ export default function Cart() {
     }
   }, []);
 
-    
+  const cartItem = JSON.parse(localStorage.getItem("cart"));
+  //cartItem.push(getCartItem);
+  //console.log(products);
+  const total = cartItem.map((value) => value.price);
+  //console.log(total);
+  let total_price = total.reduce(
+    (total, num) => parseInt(total) + parseInt(num),
+    0
+  );
+
+  
 
   const handleClick = (e) => {
     console.log("I am clicked");
@@ -65,9 +75,7 @@ export default function Cart() {
           );
           })}
       </ListGroup>
-      <Button className="btn" variant="primary">
-              Show total price
-            </Button>
+      <h3 style={{marginTop: "30px"}}> SubTotal :  {total_price}</h3>
      
       </div>
   );
